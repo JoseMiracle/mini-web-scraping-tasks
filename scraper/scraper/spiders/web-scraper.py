@@ -10,7 +10,7 @@ class WebScraperSpider(scrapy.Spider):
         
         country_infos = response.css('div.col-md-4.country')
         for each_country_info in country_infos:
-             
+                
             yield {
                 'country_name': ' '.join(each_country_info.css('h3.country-name::text').extract()[1].split()),
                 'country_capital':each_country_info.css('span.country-capital::text').get(),
